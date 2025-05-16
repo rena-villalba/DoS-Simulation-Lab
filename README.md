@@ -35,14 +35,16 @@ We can create both scripts inside the Desktop directory, in this case it doesn't
 ## Attack & Detection Phase
 On the Target VM: Open two terminals
 
-Terminal 1 – Start Suricata
-Terminal 2 – Monitor Logs (You can also use tools like jq or grep on eve.json to parse detailed alerts.)
+- Terminal 1 – Start Suricata
+
+- Terminal 2 – Monitor Logs (You can also use tools like jq or grep on eve.json to parse detailed alerts.)
 
 ## On the Attacker VM:
 Run the scripts one by one and observe the detections:
 
-Script 1 - sudo flood_script.sh 10.0.8.80
-Script 2 - sudo scanning_script 10.0.8.80
+- Script 1 - sudo flood_script.sh 10.0.8.80
+
+- Script 2 - sudo scanning_script 10.0.8.80
 
 And we can see how the target VM captures or trigger the alerts in real-time for each case.
 
