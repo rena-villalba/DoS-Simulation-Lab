@@ -30,7 +30,7 @@ DoS-Simulation-Lab/
 └── README.md
 ```
 
-## ## 🗃️ File Deployment Paths
+## File Deployment Paths
 
 | Repository File                  | VM Destination Path                                | Purpose                                |
 |----------------------------------|-----------------------------------------------------|----------------------------------------|
