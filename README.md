@@ -11,6 +11,39 @@ This lab aims to simulate a Denial-of-Service (DoS) attack and port scanning fro
 - Bash script for port scanning (nmap usage)
 - Static IP configuration for both VMs
 
+## Project Tree
+The following table shows where the configuration and script files from this repository should be placed in your virtual machines to ensure the lab functions correctly.
+```
+DoS-Simulation-Lab/
+├── attacker/
+│   ├── flood_script.sh
+│   └── scanning_script.sh
+├── target/
+│   ├── firewall.sh
+│   ├── suricata.yaml
+│   └── rules/
+│       ├── ping-flood.rules
+│       └── port_scanning.rules
+├── logs/
+│   ├── fast.log
+│   └── eve.json
+└── README.md
+```
+
+## ## 🗃️ File Deployment Paths
+
+| Repository File                  | VM Destination Path                                | Purpose                                |
+|----------------------------------|-----------------------------------------------------|----------------------------------------|
+| `target/firewall.sh`            | `/etc/iptables/rules/firewall.sh`                  | Custom iptables script                 |
+| `target/suricata.yaml`          | `/etc/suricata/suricata.yaml`                      | Suricata configuration file            |
+| `target/rules/ping-flood.rules`       | `/etc/suricata/rules/custom_rules/ping-flood.rules`      | Rules to detect ICMP ping flood         |
+| `target/rules/port_scanning.rules`       | `/etc/suricata/rules/custom_rules/port_scanning.rules`      | Rule to detect Nmap scans              |
+| `logs/fast.log`        | `/var/log/suricata/fast.log` (auto-generated)       | Suricata's real-time alert log         |
+| `logs/eve.json`       | `/var/log/suricata/eve.json` (auto-generated)       | Detailed JSON event log from Suricata  |
+| `attacker/flood_script.sh`        | `Desktop/`        | Ping Flood attack Script         |
+| `attacker/scanning_script.sh`       | `Desktop/`        | Port Scanning Script  |
+
+
 ## Network Setup
 | Role        | IP Address     | Description         |
 | ----------- | -------------- | ------------------- |
