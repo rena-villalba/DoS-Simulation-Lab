@@ -1,0 +1,9 @@
+alert tcp any any -> $HOME_NET any (msg:"TCP SYN Scan"; flags:S; flow:stateless; detection_filter:track by_src, count 20, seconds 10; sid:2000010; rev:2;)
+
+alert tcp any any -> $HOME_NET any (msg:"TCP FIN Scan"; flags:F; flow:stateless; detection_filter:track by_src, count 5, seconds 10; sid:2000012; rev:2;)
+
+alert tcp any any -> $HOME_NET any (msg:"TCP Null Scan"; flags:0; flow:stateless; detection_filter:track by_src, count 5, seconds 10; sid:2000013; rev:2;)
+
+alert tcp any any -> $HOME_NET any (msg:"TCP Xmas Scan"; flags:FPU; flow:stateless;detection_filter:track by_src, count 5, seconds 10 sid:2000014; rev:2;)
+
+alert udp any any -> $HOME_NET any (msg:"UDP Port Scan"; flow:stateless; detection_filter:track by_src, count 20, seconds 10; sid:2000015; rev:2;)
