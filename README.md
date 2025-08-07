@@ -1,5 +1,7 @@
 ## Suricata + Iptables DoS & Port Scan Detection Lab
 
+📄 Also available in [Español](README.es.md)
+
 ## Objective
 This lab aims to simulate a Denial-of-Service (DoS) attack and port scanning from one Linux virtual machine (VM) to another. The goal is to generate telemetry using two bash scripts: one that sends ICMP ping floods (DoS simulation) and another that performs multiple Nmap scans. The target VM, configured with Suricata (in IDS mode) and iptables, will detect and log both types of activity for analysis and potential integration with SIEM/SOAR tools.
 
@@ -27,7 +29,8 @@ DoS-Simulation-Lab/
 ├── logs/
 │   ├── fast.log
 │   └── eve.json
-└── README.md
+├── README.md
+└── README.es.md
 ```
 
 ## File Deployment Paths
